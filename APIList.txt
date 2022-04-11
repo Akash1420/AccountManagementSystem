@@ -1,0 +1,26 @@
+Manager:-
+
+1. Check if pan no exists already  ----> checkPAN("/user/{PAN}")    //GET
+
+-- API Name -> createUser()  //POST
+
+  	    -> changePassword()  //PUT
+
+
+
+
+Users:-
+
+1. GET ---->   viewAccounts("/user/{userID}")
+2. GET----->   viewTransaction("/user/{userID}") 
+3. GET----->   for 5 transactions
+4. GET----->    viewTransaction() // date wise, CSV
+5. userLogin() //POST
+6. showBalance() //GET --Params - Account Number
+
+
+Transaction:-
+
+		
+		credit() //POST
+		debit() //POST
