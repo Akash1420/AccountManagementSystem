@@ -16,6 +16,7 @@ Users:-
 3. GET----->   for 5 transactions    pending
 4. GET----->    viewTransaction() // date wise, CSV
 5. userLogin() //POST     Done
+
 6. showBalance() //GET --Params - Account Number  Done
 
 

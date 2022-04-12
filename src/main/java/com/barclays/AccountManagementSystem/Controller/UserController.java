@@ -59,7 +59,7 @@ public class UserController {
 		System.out.println();
 		System.out.println(customerId + " "+ password);
 		System.out.println();
-		List<BankAccount> accounts=userService.userlogin((long)customerId,(String) password);
+		List<BankAccount> accounts=userService.userlogin((long)customerId,(String)password);
 		return accounts;
 	}
 	

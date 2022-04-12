@@ -11,7 +11,7 @@ public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long roleID;
-	private String name;
+	private String name;  //manger, user
 	
 	
 	

@@ -18,14 +18,15 @@ public class AccountTransaction {
 
 	private Date dateTime;
 
-	private long transactionType; //credit, Debit, wid
+	private String transactionType; //credit, Debit, wid
 
-	private long subType;
+	private String subType;
 
 	private double balance;
     
 	private long accountNumber;
 	
+	private long secondPartyAccount;
 	
 
 	public AccountTransaction() {
@@ -33,8 +34,8 @@ public class AccountTransaction {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AccountTransaction(long transactionId, String referenceNumber, Date dateTime, long transactionType,
-			long subType, double balance, long accountNumber) {
+	public AccountTransaction(long transactionId, String referenceNumber, Date dateTime, String transactionType,
+			String subType, double balance, long accountNumber, long receiverAccount) {
 		super();
 		this.transactionId = transactionId;
 		this.referenceNumber = referenceNumber;
@@ -43,6 +44,7 @@ public class AccountTransaction {
 		this.subType = subType;
 		this.balance = balance;
 		this.accountNumber = accountNumber;
+		this.secondPartyAccount=receiverAccount;
 	}
 
 	public long getTransactionId() {
@@ -69,19 +71,20 @@ public class AccountTransaction {
 		this.dateTime = dateTime;
 	}
 
-	public long getTransactionType() {
+
+	public String getTransactionType() {
 		return transactionType;
 	}
 
-	public void setTransactionType(long transactionType) {
+	public void setTransactionType(String transactionType) {
 		this.transactionType = transactionType;
 	}
 
-	public long getSubType() {
+	public String getSubType() {
 		return subType;
 	}
 
-	public void setSubType(long subType) {
+	public void setSubType(String subType) {
 		this.subType = subType;
 	}
 
@@ -99,6 +102,14 @@ public class AccountTransaction {
 
 	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+
+	public long getSecondPartyAccount() {
+		return secondPartyAccount;
+	}
+
+	public void setSecondPartyAccount(long receiverAccount) {
+		this.secondPartyAccount = receiverAccount;
 	}
 	
 	

@@ -10,8 +10,7 @@
 	</parent>
 	<groupId>com.barclays</groupId>
 	<artifactId>AccountManagementSystem</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>AccountManagementSystem</name>
 	<description>Project for Account Management System</description>
 	<properties>
@@ -46,7 +45,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	<finalName>AccountManagement</finalName>
 	</build>
 
 </project>
