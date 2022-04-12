@@ -4,29 +4,37 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 @Entity
 public class AccountTransaction {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long transactionId;
 
 	private String referenceNumber;
 
 	private Date dateTime;
 
-	private long transactionType;
+	private long transactionType; //credit, Debit, wid
 
 	private long subType;
 
 	private double balance;
     
-	private String accountNumber;
+	private long accountNumber;
 	
 	
 
+	public AccountTransaction() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public AccountTransaction(long transactionId, String referenceNumber, Date dateTime, long transactionType,
-			long subType, double balance, String accountNumber) {
+			long subType, double balance, long accountNumber) {
 		super();
 		this.transactionId = transactionId;
 		this.referenceNumber = referenceNumber;
@@ -85,11 +93,11 @@ public class AccountTransaction {
 		this.balance = balance;
 	}
 
-	public String getAccountNumber() {
+	public long getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 	

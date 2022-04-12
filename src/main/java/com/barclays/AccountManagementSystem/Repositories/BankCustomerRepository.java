@@ -6,5 +6,5 @@ import com.barclays.AccountManagementSystem.Entities.BankAccount;
 import com.barclays.AccountManagementSystem.Entities.BankCustomer;
 
 public interface BankCustomerRepository extends JpaRepository<BankCustomer, Long>{
-
+	public BankCustomer findByPanCard(long panCard);
 }

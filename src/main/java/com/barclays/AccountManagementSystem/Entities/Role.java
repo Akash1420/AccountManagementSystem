@@ -1,19 +1,28 @@
 package com.barclays.AccountManagementSystem.Entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Role {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long roleID;
 	private String name;
 	
 	
-	public Role(long roleID, String name) {
+	
+
+	public Role() {
 		super();
-		this.roleID = roleID;
+	}
+
+	public Role( String name) {
+		super();
+		
 		this.name = name;
 	}
 	

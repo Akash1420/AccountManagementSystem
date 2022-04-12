@@ -1,20 +1,26 @@
 package com.barclays.AccountManagementSystem.Entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
 public class BankAccount {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private long accountNumber;
     private long customerId;
     private double balance;
 	
     
     
-    public BankAccount(long accountNumber, long customerId, double balance) {
+    public BankAccount() {
 		super();
-		this.accountNumber = accountNumber;
+	}
+	public BankAccount( long customerId, double balance) {
+		super();
+		
 		this.customerId = customerId;
 		this.balance = balance;
 	}

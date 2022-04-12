@@ -1,12 +1,15 @@
 package com.barclays.AccountManagementSystem.Entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class User {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long userID;
 	private long customerID;
 	private String password;
@@ -15,16 +18,19 @@ public class User {
 	private boolean isTempPassValid;
 	
 	
-//	public User(long userID, long customerID, String password, String tempPassword, long roleID,
-//			boolean isTempPassValid) {
-//		super();
-//		this.userID = userID;
-//		this.customerID = customerID;
-//		this.password = password;
-//		this.tempPassword = tempPassword;
-//		this.roleID = roleID;
-//		this.isTempPassValid = isTempPassValid;
-//	}
+	public User() {
+		super();
+	}
+	public User( long customerID, String password, String tempPassword, long roleID,
+			boolean isTempPassValid) {
+		super();
+		
+		this.customerID = customerID;
+		this.password = password;
+		this.tempPassword = tempPassword;
+		this.roleID = roleID;
+		this.isTempPassValid = isTempPassValid;
+	}
 	public long getUserID() {
 		return userID;
 	}

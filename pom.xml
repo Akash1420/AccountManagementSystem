@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.barclays</groupId>
 	<artifactId>AccountManagementSystem</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>AccountManagementSystem</name>
 	<description>Project for Account Management System</description>
 	<properties>

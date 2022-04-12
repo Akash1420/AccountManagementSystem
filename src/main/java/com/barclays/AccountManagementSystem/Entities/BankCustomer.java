@@ -3,11 +3,14 @@ package com.barclays.AccountManagementSystem.Entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class BankCustomer {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long customerID;
 	private long panCard;
 	private long aadhar;
@@ -16,10 +19,10 @@ public class BankCustomer {
 	private String address;
 	private	Date dob;
 	
-	public BankCustomer(long customerID, long panCard, long aadhar, String name, String email, String address,
+	public BankCustomer( long panCard, long aadhar, String name, String email, String address,
 			Date dob) {
 		super();
-		this.customerID = customerID;
+		
 		this.panCard = panCard;
 		this.aadhar = aadhar;
 		this.name = name;
@@ -27,6 +30,11 @@ public class BankCustomer {
 		this.address = address;
 		this.dob = dob;
 	}
+	
+	public BankCustomer() {
+		super();
+	}
+
 	public long getCustomerID() {
 		return customerID;
 	}
