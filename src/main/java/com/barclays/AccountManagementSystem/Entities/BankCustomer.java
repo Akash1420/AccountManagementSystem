@@ -10,7 +10,6 @@ import javax.persistence.Id;
 @Entity
 public class BankCustomer {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long customerID;
 	private long panCard;
 	private long aadhar;

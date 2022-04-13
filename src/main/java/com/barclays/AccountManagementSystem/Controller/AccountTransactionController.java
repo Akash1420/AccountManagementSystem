@@ -1,6 +1,8 @@
 package com.barclays.AccountManagementSystem.Controller;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.barclays.AccountManagementSystem.Entities.AccountTransaction;
+import com.barclays.AccountManagementSystem.Repositories.AccountTransactionRepository;
 import com.barclays.AccountManagementSystem.Services.AccountTransactionService;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -18,6 +21,9 @@ public class AccountTransactionController {
 
 	@Autowired
 	private AccountTransactionService accTr;
+	
+	@Autowired
+	private AccountTransactionRepository accountTrRepo;
 	
 	
 	@GetMapping("/transaction/{acc}")
@@ -47,7 +53,15 @@ public class AccountTransactionController {
 	
 	@PostMapping("/transaction/transerfer")
 	public AccountTransaction transferTransaction(@RequestBody AccountTransaction account) {
-		
+		Random rand =new Random();
+		long referenceId =rand.nextLong((long)1e10, (long)1e11);
+//		Optional<AccountTransaction> actTr= accountTrRepo.findById(transacId);
+//		while(actTr.get()!=null) {
+//			 transacId =rand.nextLong((long)1e10, (long)1e11);
+//			 actTr= accountTrRepo.findById(transacId);
+//		}
+	
+		account.setReferenceNumber(referenceId+"");
 		 accTr.credit(account);
 		 accTr.debit(account);
 		 return account;
@@ -61,10 +75,7 @@ public class AccountTransactionController {
 		
 	}
 	
-//	@GetMapping("/transaction/{acc}")
-//	public void getCsvFormat(@PathVariable long acc){
-//		accTr.getCsvFormat(acc);
-//	}
+	
 	
 	
 }

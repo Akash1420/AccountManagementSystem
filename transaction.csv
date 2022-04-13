@@ -1,0 +1,8 @@
+transactionId,referenceNumber,transactionType,subType,balance,accountNumber
+6,2939rjfm3i3,debit,online,4000.0,5
+7,2939rjfm3i3,debit,online,4000.0,5
+8,2939rjfm3i3,credit,online,4000.0,5
+9,2939rjfm3i3,credit,online,4000.0,5
+11,2939rjfm3i3,debit,online,4000.0,5
+16,2939rjfm3i3,debit,online,4000.0,5
+18,2939rjfm3i3,debit,online,4000.0,5

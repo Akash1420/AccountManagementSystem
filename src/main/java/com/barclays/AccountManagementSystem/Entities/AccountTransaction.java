@@ -11,7 +11,6 @@ import javax.persistence.OneToMany;
 @Entity
 public class AccountTransaction {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long transactionId;
 
 	private String referenceNumber;

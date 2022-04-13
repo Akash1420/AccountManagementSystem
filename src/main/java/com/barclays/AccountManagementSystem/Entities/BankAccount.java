@@ -8,7 +8,6 @@ import javax.persistence.Id;
 public class BankAccount {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
     private long accountNumber;
     private long customerId;
     private double balance;

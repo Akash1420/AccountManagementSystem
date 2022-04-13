@@ -1,5 +1,7 @@
 package com.barclays.AccountManagementSystem.Services;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -36,7 +38,11 @@ public class RoleServices {
 	
 	public BankCustomer createUser(BankCustomer userDetails) {
 		BankCustomer bankCus;
+		Random rand =new Random();
 		if(bankCustomerRepo.findByPanCard(userDetails.getPanCard())==null) {
+			
+			long customerId =rand.nextLong((long)1e5, (long)1e6);
+			userDetails.setCustomerID(customerId);
 			bankCustomerRepo.save(userDetails);
 			
 			bankCus = bankCustomerRepo.findByPanCard(userDetails.getPanCard());
@@ -50,7 +56,9 @@ public class RoleServices {
 		
 		bankCus = bankCustomerRepo.findByPanCard(userDetails.getPanCard());
 		
-		BankAccount bankAcc = new BankAccount(bankCus.getCustomerID(),0);
+		BankAccount bankAcc = new BankAccount(bankCus.getCustomerID(),10000);
+		long Accountnumber =rand.nextLong((long)1e9, (long)1e10);
+		bankAcc.setAccountNumber(Accountnumber);
 		bankAccountRepo.save(bankAcc);
 		return userDetails;
 		
