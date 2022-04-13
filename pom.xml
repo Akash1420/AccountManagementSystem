@@ -10,8 +10,10 @@
 	</parent>
 	<groupId>com.barclays</groupId>
 	<artifactId>AccountManagementSystem</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v1</version>
 	<name>AccountManagementSystem</name>
+	<packaging>war</packaging>
+
 	<description>Project for Account Management System</description>
 	<properties>
 		<java.version>1.8</java.version>
